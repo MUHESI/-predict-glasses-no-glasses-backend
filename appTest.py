@@ -12,7 +12,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 tampon = os.path.join(os.getcwd(),"imagesEntrees","datas")
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+# cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 # API avec JSON
@@ -52,9 +52,9 @@ def get_reperage():
 
         # if np.argmax(predictions[0]) < 0.5 :
         if predictions[0] < 0.5 :
-            classOfPrediction = 'no_glasses'        
+            classOfPrediction = 'glasses'        
         else :
-            classOfPrediction = 'glasses'
+            classOfPrediction = 'no_glasses'
         # valeur=predictions[0][np.argmax(predictions[0])]
         Confiancevalue = predictions[0]
 
